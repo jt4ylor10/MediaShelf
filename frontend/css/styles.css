@@ -298,6 +298,12 @@ main {
     color: var(--primary-color);
 }
 
+.signup__forgot {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+}
+
 /* ===== Footer ===== */
 .footer {
     padding: 0.5rem max(1rem, calc((100% - 1200px) / 2));
@@ -373,7 +379,8 @@ main {
 
     .signup__menu-btn {
         top: 1rem;
-        right: 1rem;
+        right: auto;
+        left: 1rem;
         padding: 0.25rem 1rem;
         font-size: 1.25rem;
     }
@@ -426,6 +433,19 @@ main {
 
     .signup__subtitle {
         font-size: 1.25rem;
+    }
+
+    /* Login: image panel on the right, no dot beside the title. */
+    .signup__box--login .signup__logo {
+        order: 1;
+    }
+
+    .signup__box--login .signup__title::before {
+        display: none;
+    }
+
+    .signup__forgot {
+        font-size: 1rem;
     }
 
     .signup__form {
