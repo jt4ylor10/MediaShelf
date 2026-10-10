@@ -87,6 +87,7 @@ main {
     font-weight: bold;
     font-family: var(--font-display);
     color: var(--header-text-color);
+    text-decoration: none;
     border-radius: 0.25rem;
     background-color: var(--secondary-color);
 
@@ -228,6 +229,7 @@ main {
     font-size: 0.9rem;
     font-weight: bold;
     color: var(--header-text-color);
+    text-decoration: none;
 
     cursor: pointer;
     background-color: var(--primary-color);
@@ -298,6 +300,50 @@ main {
     color: var(--primary-color);
 }
 
+.signup__forgot {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+}
+
+/* Forgot password: cream card on the red page (page does not use swapped-colors). */
+.signup__box--forgot .signup__menu-btn {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.signup__box--forgot .signup__input {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.signup__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signup__btn {
+    padding: 0.5rem 1.5rem;
+
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.signup__btn--cancel {
+    color: var(--header-text-color);
+    background-color: #fff;
+}
+
+.signup__btn--reset {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
 /* ===== Footer ===== */
 .footer {
     padding: 0.5rem max(1rem, calc((100% - 1200px) / 2));
@@ -364,8 +410,8 @@ main {
         grid-template-columns: 1fr 1fr;
         gap: 0;
 
-        width: min(96%, 1800px);
-        height: 80dvh;
+        width: min(90%, 1400px);
+        min-height: 70dvh;
         max-height: none;
         padding: 0;
         overflow: hidden;
@@ -373,7 +419,8 @@ main {
 
     .signup__menu-btn {
         top: 1rem;
-        right: 1rem;
+        right: auto;
+        left: 1rem;
         padding: 0.25rem 1rem;
         font-size: 1.25rem;
     }
@@ -428,6 +475,19 @@ main {
         font-size: 1.25rem;
     }
 
+    /* Login: image panel on the right, no dot beside the title. */
+    .signup__box--login .signup__logo {
+        order: 1;
+    }
+
+    .signup__box--login .signup__title::before {
+        display: none;
+    }
+
+    .signup__forgot {
+        font-size: 1rem;
+    }
+
     .signup__form {
         gap: 1.25rem;
         width: 100%;
@@ -469,5 +529,63 @@ main {
     .signup__menu-btn:active {
         transform: scale(0.95);
         transition: transform 0.1s ease;
+    }
+
+    /* Forgot password: single centered card with a round image slot above the text. */
+    .signup__box--forgot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+
+        width: min(90%, 560px);
+        height: auto;
+        min-height: 0;
+        padding: 2rem 1.5rem;
+        overflow: visible;
+    }
+
+    .signup__box--forgot .signup__menu-btn {
+        right: 1rem;
+        left: auto;
+    }
+
+    .signup__box--forgot .signup__logo {
+        width: 8rem;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #8a8479;
+    }
+
+    .signup__box--forgot .signup__logo::after {
+        content: none;
+    }
+
+    .signup__box--forgot .signup__content {
+        padding: 0;
+    }
+
+    .signup__box--forgot .signup__title {
+        font-size: 2rem;
+    }
+
+    .signup__box--forgot .signup__title::before {
+        display: none;
+    }
+
+    .signup__box--forgot .signup__subtitle {
+        font-size: 1rem;
+    }
+
+    .signup__box--forgot .signup__input {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .signup__btn {
+        padding: 0.6rem 2rem;
+        font-size: 1rem;
     }
 }
