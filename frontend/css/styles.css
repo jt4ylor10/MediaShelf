@@ -501,34 +501,10 @@ main {
     .signup__submit {
         padding: 1.25rem;
         font-size: 1.75rem;
-
-        transition: all 0.3s ease;
     }
 
     .signup__alt {
         font-size: 1rem;
-    }
-
-    .signup__submit:hover {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        transform: scale(1.05);
-        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .signup__submit:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease;
-    }
-
-    .signup__menu-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        transition: all 0.3s ease;
-    }
-
-    .signup__menu-btn:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease;
     }
 
     /* Forgot password: single centered card with a round image slot above the text. */
@@ -587,5 +563,26 @@ main {
     .signup__btn {
         padding: 0.6rem 2rem;
         font-size: 1rem;
+    }
+
+    /* Shared button animation */
+    .signup__menu-btn,
+    .signup__submit,
+    .signup__btn {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .signup__menu-btn:hover,
+    .signup__submit:hover,
+    .signup__btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .signup__menu-btn:active,
+    .signup__submit:active,
+    .signup__btn:active {
+        transform: scale(0.95);
+        box-shadow: none;
     }
 }
