@@ -93,6 +93,8 @@ main {
 
     cursor: pointer;
     transition: all .2s ease;
+
+    
 }
 
 .landing-btn:hover {
@@ -103,8 +105,18 @@ main {
 
 /* ===== Hero ===== */
 .hero {
+    position: relative;
     height: 80vh;
     overflow: hidden;
+}
+
+/* Inset shadows paint under an img's content, so draw it on an overlay. */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero__img {
@@ -384,6 +396,10 @@ main {
         margin-top: -2rem;
         margin-left: auto;
         margin-right: auto;
+
+        /* Stack above the hero's shadow overlay. */
+        position: relative;
+        z-index: 1;
     }
 
     .landing-btn {
@@ -419,10 +435,15 @@ main {
 
     .signup__menu-btn {
         top: 1rem;
-        right: auto;
-        left: 1rem;
+        right: 1rem;
+        left: auto;
         padding: 0.25rem 1rem;
         font-size: 1.25rem;
+    }
+
+    .signup__box--login .signup__menu-btn {
+        right: auto;
+        left: 1rem;
     }
 
     /* Left image panel; replace the placeholder text with an image later. */
@@ -576,7 +597,7 @@ main {
     .signup__submit:hover,
     .signup__btn:hover {
         transform: scale(1.05);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
     }
 
     .signup__menu-btn:active,
