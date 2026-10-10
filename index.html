@@ -62,5 +62,16 @@
     <footer class="footer">
         <p class="footer__copy">&copy; 2026 The Media Shelf Team - All rights reserved.</p>
     </footer>
+
+    <!-- adding script here for now -->
+    <!-- script to enable horizontal scrolling for the intro carousel -->
+    <script> const carousel = document.querySelector('.intro__carousel');
+        carousel.addEventListener('wheel', (evt) => {
+            if (evt.deltaY !== 0) {
+                evt.preventDefault();
+                carousel.scrollLeft += evt.deltaY;
+            }
+        });
+</script>
 </body>
 </html>

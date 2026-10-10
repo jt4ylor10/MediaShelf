@@ -157,13 +157,12 @@ main {
     display: flex;
     gap: 1em;
 
+    /* Room for hover scale and shadow; overflow-x: auto forces overflow-y to clip. */
+    padding: 1rem;
+
+    scroll-behavior: smooth;
     align-content: center;
 }
-
-.intro__carousel::-webkit-scrollbar {
-    display:none;
-}
-
 
 .intro__card {
     flex: 0 0 20em;
@@ -174,6 +173,13 @@ main {
     text-align: center;
     align-content: center;
     color: var(--header-text-color);
+
+    transition: all .2s ease;
+}
+
+.intro__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .intro__carousel img {
