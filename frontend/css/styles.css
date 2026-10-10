@@ -13,7 +13,6 @@
 .swapped-colors {
     --primary-color: #f2eae1;
     --secondary-color: #e93d45;
-
 }
 
 /* ===== Base ===== */
@@ -55,7 +54,7 @@ main {
     font-size: 2rem;
     color: var(--header-text-color);
     text-decoration: none;
-    
+
     transition: all .2s ease;
 }
 
@@ -63,8 +62,6 @@ main {
     color: var(--primary-color);
     transform: translateY(-2px) translateX(2px);
     text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
-
-    transition: all .2s ease;
 }
 
 .nav__menu-btn {
@@ -81,7 +78,7 @@ main {
 }
 
 .landing-btn-container {
-    display:none;
+    display: none;
 }
 
 .landing-btn {
@@ -92,21 +89,15 @@ main {
     color: var(--header-text-color);
     border-radius: 0.25rem;
     background-color: var(--secondary-color);
-    
-    /* border: 5px solid #15282f;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
-    
+
     cursor: pointer;
     transition: all .2s ease;
 }
 
 .landing-btn:hover {
-    /* border: 3px solid var(--header-text-color); */
     transform: translateY(-5px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     color: var(--primary-color);
-
-    transition: all .2s ease;
 }
 
 /* ===== Hero ===== */
@@ -125,7 +116,6 @@ main {
 }
 
 /* ===== Intro ===== */
-
 .intro__content {
     display: flex;
     flex-direction: column;
@@ -157,20 +147,20 @@ main {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--font-color);
-}   
+}
 
 .intro__carousel {
-    width: 95%;
-    overflow-x: auto;
-    margin: auto;
     display: flex;
     gap: 1em;
+    align-content: center;
 
+    width: 95%;
+    margin: auto;
     /* Room for hover scale and shadow; overflow-x: auto forces overflow-y to clip. */
     padding: 1rem;
 
+    overflow-x: auto;
     scroll-behavior: smooth;
-    align-content: center;
 }
 
 .intro__card {
@@ -206,9 +196,12 @@ main {
     min-height: 100dvh;
     margin: 0;
     max-width: none;
+    /* Keeps a tall box clear of the fixed footer. */
+    padding: 1rem 0 3.5rem;
 }
 
 .signup__box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,6 +215,23 @@ main {
     color: var(--header-text-color);
     background-color: var(--secondary-color);
     border-radius: 0.5rem;
+}
+
+.signup__menu-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1;
+    padding: 0.15rem 0.6rem;
+
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--header-text-color);
+
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border-radius: 0.25rem;
 }
 
 .signup__logo {
@@ -320,18 +330,14 @@ main {
 
     .landing-btn-container {
         display: flex;
-        justify-content: center;
         gap: 1rem;
-
+        justify-content: space-around;
         align-self: center;
         width: clamp(300px, 80%, 900px);
 
         margin-top: -2rem;
         margin-left: auto;
         margin-right: auto;
-        justify-content: space-around;
-
-        
     }
 
     .landing-btn {
@@ -365,7 +371,14 @@ main {
         overflow: hidden;
     }
 
-    /* Left image panel; swap the placeholder text for an image later. */
+    .signup__menu-btn {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.25rem 1rem;
+        font-size: 1.25rem;
+    }
+
+    /* Left image panel; replace the placeholder text with an image later. */
     .signup__logo {
         display: grid;
         place-items: center;
@@ -428,9 +441,33 @@ main {
     .signup__submit {
         padding: 1.25rem;
         font-size: 1.75rem;
+
+        transition: all 0.3s ease;
     }
 
     .signup__alt {
         font-size: 1rem;
+    }
+
+    .signup__submit:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .signup__submit:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    .signup__menu-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .signup__menu-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
     }
 }
