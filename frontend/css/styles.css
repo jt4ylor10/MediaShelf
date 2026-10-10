@@ -2,11 +2,18 @@
 :root {
     --primary-color: #e93d45;
     --secondary-color: #f2eae1;
+    --tertiary-color: #bf373e;
     --header-text-color: #15282f;
     --font-color: #f2eae1;
 
     --font-display: 'Bungee', sans-serif;
     --font-body: 'Bungee', sans-serif;
+}
+
+.swapped-colors {
+    --primary-color: #f2eae1;
+    --secondary-color: #e93d45;
+
 }
 
 /* ===== Base ===== */
@@ -189,6 +196,98 @@ main {
     height: auto;
 }
 
+/* ===== Signup ===== */
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* dvh excludes the mobile browser toolbar, which 100vh does not. */
+    min-height: 100dvh;
+    margin: 0;
+    max-width: none;
+}
+
+.signup__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    width: min(350px, 90%);
+    max-height: 90dvh;
+    padding: 1.5rem 1rem;
+
+    text-align: center;
+    color: var(--header-text-color);
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+}
+
+.signup__logo {
+    width: min(250px, 100%, 30dvh);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.signup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.signup__title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+}
+
+.signup__subtitle {
+    font-size: 0.9rem;
+}
+
+.signup__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.signup__input {
+    padding: 0.6rem 0.5rem;
+
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--header-text-color);
+
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.signup__submit {
+    margin-top: 0.5rem;
+    padding: 1rem;
+
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--primary-color);
+
+    cursor: pointer;
+    background-color: var(--tertiary-color);
+    border-radius: 0.5rem;
+}
+
+.signup__alt {
+    font-size: 0.75rem;
+}
+
+.signup__alt a {
+    color: var(--primary-color);
+}
+
 /* ===== Footer ===== */
 .footer {
     padding: 0.5rem max(1rem, calc((100% - 1200px) / 2));
@@ -201,6 +300,12 @@ main {
 
 .footer__copy {
     font-size: 1rem;
+}
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* ===== Responsive ===== */
@@ -247,3 +352,85 @@ main {
         width:90%;
         gap: 1.5rem;
     }
+
+    .signup__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+
+        width: min(96%, 1800px);
+        height: 80dvh;
+        max-height: none;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Left image panel; swap the placeholder text for an image later. */
+    .signup__logo {
+        display: grid;
+        place-items: center;
+
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        border-radius: 0;
+        background-color: var(--tertiary-color);
+    }
+
+    /* Left image panel placeholder */
+    .signup__logo::after {
+        content: "Some cool image here...";
+        padding: 1.5rem;
+        font-size: 2rem;
+        color: var(--primary-color);
+    }
+
+    /* Right content panel */
+    .signup__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        padding: 1.5rem clamp(2rem, 6vw, 6rem);
+    }
+
+    .signup__title {
+        font-size: 3rem;
+    }
+
+    /* Decorative circle before the title */
+    .signup__title::before {
+        content: "";
+        display: inline-block;
+        width: 2.5rem;
+        aspect-ratio: 1;
+        margin-right: 0.75rem;
+        vertical-align: middle;
+        border-radius: 50%;
+        background-color: var(--header-text-color);
+    }
+
+    .signup__subtitle {
+        font-size: 1.25rem;
+    }
+
+    .signup__form {
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .signup__input {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .signup__submit {
+        padding: 1.25rem;
+        font-size: 1.75rem;
+    }
+
+    .signup__alt {
+        font-size: 1rem;
+    }
+}
