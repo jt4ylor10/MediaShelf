@@ -85,9 +85,11 @@ main {
     color: var(--header-text-color);
     border-radius: 0.25rem;
     background-color: var(--secondary-color);
-    /* border: 3px solid transparent; */
+    
+    /* border: 5px solid #15282f;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+    
     cursor: pointer;
-
     transition: all .2s ease;
 }
 
